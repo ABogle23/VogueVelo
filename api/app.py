@@ -18,3 +18,16 @@ def submit():
     input_password = request.form.get("password")
     return render_template(
         "success.html", username=input_username, password=input_password)
+
+
+@app.route("/query", methods=["GET"])
+def test_query_return():
+    q = request.args.get('q')
+    return process_query(q)
+
+
+def process_query(q):
+    if q == "dinosaurs":
+        return "Dinosaurs ruled the Earth 200 million years ago"
+    else:
+        return "Unknown"
