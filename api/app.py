@@ -16,4 +16,5 @@ def hello_world():
 def submit():
     input_username = request.form.get("username")
     input_password = request.form.get("password")
-    return render_template("success.html", username=input_username, password=input_password)
+    return render_template(
+        "success.html", username=input_username, password=input_password)
